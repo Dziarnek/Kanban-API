@@ -27,5 +27,15 @@ function initSortable() {
 		connectWith: '.card-list',
 		placeholder: 'card-placeholder',
 		opacity: 0.95,
+		receive: function(event, ui) {
+			var movedCard = ui.item[0];
+			$.ajax({
+				url: baseUrl + '/card/' + self.id,
+				type: 'PUT',
+				data: {
+					bootcamp_kanban_column_id: $(movedCard).parent().id
+				}
+			});
+        }
 	}).disableSelection();
 };
