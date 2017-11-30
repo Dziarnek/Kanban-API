@@ -13,7 +13,9 @@ function Column(id, name) {
 			columnDelete = $('<button class="btn-delete">x</button>'),
 			columnAddCard = $('<button class="column-add-card">+</button>'),
 			columnChangeName = $('<button class="change-name"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>');
-		
+
+		columnCardList.attr('data-column-id', self.id);
+
 		// PODPINANIE ODPOWIEDNICH ZDARZEŃ POD WĘZŁY
 		columnDelete.on("click", function() {
 			self.deleteColumn();
