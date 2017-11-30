@@ -41,7 +41,7 @@ Card.prototype = {
 	},
 	newCardName: function() {
 		var self = this,
-			newName = prompt('Enter new card name');
+			newName = prompt('Enter new card name') || "New card";
 		$.ajax({
 			url: baseUrl + '/card/' + self.id,
 			method: 'PUT',
